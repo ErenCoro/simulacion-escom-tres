@@ -64,7 +64,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     return {"access_token": user.username, "token_type": "bearer"}
 
 
-@app.post("/linear/regression/train")
+@app.post("/linear/regression/sgd/train")
 async def link(*, token: str = Depends(oauth2_scheme), data: linear_regression):
     url = data.data_url
     learning = data.learning_rate
