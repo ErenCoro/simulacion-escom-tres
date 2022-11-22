@@ -13,7 +13,7 @@ def dataframe(url_csv,  labels = 'prediction') :
 def train_SGDR(data_url,learning_rate, iterations):
 
     features, label = dataframe(data_url)
-    sgdr = linear_model.SGDRegressor(max_iter = iterations, eta0 = learning_rate)
+    sgdr = linear_model.SGDRegressor(max_iter = iterations, eta0 = learning_rate, tol = 0)
     sgdr.fit (features, label)
     weight = sgdr.coef_
     bias = sgdr.intercept_
